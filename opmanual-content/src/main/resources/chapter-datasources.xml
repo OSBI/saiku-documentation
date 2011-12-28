@@ -10,8 +10,7 @@
         <title>Adding A New Data Source</title>
       </info>
       <para>
-	<indexterm><primary>Data Source</primary></indexterm>
-	Whilst we haven't yet had the time or resource to create a lovely graphical admin console for you system administrators we have tried to make it simple for you to add data sources to the Saiku platform.
+	<indexterm><primary>Data Source</primary></indexterm>Whilst we haven't yet had the time or resource to create a lovely graphical admin console for you system administrators we have tried to make it simple for you to add data sources to the Saiku platform.
       </para>
       <para>
 	The Saiku server is shipped with Foodmart by default. So I shall show you how to import the steel-wheels schema and configure it to use a MySQL database connection.
@@ -24,7 +23,8 @@
 type=OLAP
 name=steelwheels
 driver=mondrian.olap4j.MondrianOlap4jDriver
-location=jdbc:mondrian:Jdbc=jdbc:mysql://localhost/sampledata;Catalog=../webapps/saiku/steelwheels/steelwheels.mondrian.xml;JdbcDrivers=com.mysql.jdbc.Driver;
+location=jdbc:mondrian:Jdbc=jdbc:mysql://localhost/sampledata; \
+>Catalog=../webapps/saiku/steelwheels/steelwheels.mondrian.xml;JdbcDrivers=com.mysql.jdbc.Driver;
 username=dbuser
 password=password
 	</screen>
@@ -38,8 +38,7 @@ password=password
 	  <title>Adding a new JDBC Driver</title>
 	</info>
       <para>
-	<indexterm><primary>JDBC</primary><secondary>Drivers</secondary></indexterm>
-	Obviously not everyone uses Hypersonic or MySQL to connect to their data warehouses. To use your specific database, please add the JDBC connector jar file to saiku-server/tomcat/webapps/saiku/WEB-INF/lib/ and then make the appropriate changes to the jdbc portion of the location string in the connection file.
+	<indexterm><primary>JDBC</primary><secondary>Drivers</secondary></indexterm>Obviously not everyone uses Hypersonic or MySQL to connect to their data warehouses. To use your specific database, please add the JDBC connector jar file to saiku-server/tomcat/webapps/saiku/WEB-INF/lib/ and then make the appropriate changes to the jdbc portion of the location string in the connection file.
       </para>
       </section>
  </chapter>

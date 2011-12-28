@@ -11,8 +11,7 @@
       </info>
       <para>
 	<indexterm><primary>API</primary></indexterm>
-	<indexterm><primary>JavaDoc</primary></indexterm>
-	If you are interested in finding out more about the inner workings of the Saiku server please checkout our Javadocs and inbuilt Enunciate documentation. 
+	<indexterm><primary>JavaDoc</primary></indexterm>If you are interested in finding out more about the inner workings of the Saiku server please checkout our Javadocs and inbuilt Enunciate documentation. 
       </para>
       <para>
 	<itemizedlist>
@@ -31,13 +30,10 @@
       <para>
 	<indexterm><primary>Enunciate</primary></indexterm>
 	<indexterm><primary>RESTful</primary></indexterm>
-	<indexterm><primary>documentation</primary></indexterm>
-	Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
-      
-      In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/">http://demo.analytical-labs.com/saiku/serverdocs/</link>
-      
-      or if you have your own installation: <link xl:href="http://localhost/saiku/serverdocs/index.html">http://localhost/saiku/serverdocs/index.html</link>
-      
+	<indexterm><primary>documentation</primary></indexterm>Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
+      </para>
+      <para>
+	In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/">http://demo.analytical-labs.com/saiku/serverdocs/</link> or if you have your own installation: <link xl:href="http://localhost/saiku/serverdocs/index.html">http://localhost/saiku/serverdocs/index.html</link>
       Just hit login on any login screens that may appear. 
       </para>
     </section>

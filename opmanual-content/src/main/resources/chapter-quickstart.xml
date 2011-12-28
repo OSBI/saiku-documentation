@@ -10,8 +10,7 @@
         <title>How to get started in a hurry</title>
       </info>
       <para>
-	<indexterm><primary>Quick Start</primary></indexterm>
-	Because we are nice folks here at Analytical Labs we like to make your lives as easy as possible. To get started with Saiku we have created a bundle that has a sample set of data that means you can install and evaluate Saiku without having to supply your own data set and cube if you don't have one, or even know what a cube is.
+	<indexterm><primary>Quick Start</primary></indexterm>Because we are nice folks here at Analytical Labs we like to make your lives as easy as possible. To get started with Saiku we have created a bundle that has a sample set of data that means you can install and evaluate Saiku without having to supply your own data set and cube if you don't have one, or even know what a cube is.
       </para>
       <para>
 	To get started navigate to <link xl:href="http://analytical-labs.com">the Analytical Labs website</link> and download a Saiku server package that includes the sample database(labeled Saiku Server (Including Foodmart DB)). This package contains, a Tomcat server, the Saiku server, the Saiku user interface, an in memory database with a dataset called Foodmart and the Mondrian schema required to access the data from Saiku.

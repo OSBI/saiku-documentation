@@ -52,15 +52,14 @@
 	  </info>
 	  <para>
 	    <indexterm><primary>RESTful</primary></indexterm>
-	    Saiku is a modular analysis suite offering lightweight OLAP which remains easily embeddable, extendable and configurable.   The Saiku RESTful server connects to existing OLAP systems, which powers user-friendly, intuitive analytics via our lightweight JQuery based frontend.  
+	    Saiku is a modular analysis suite offering lightweight OLAP which remains easily embeddable, extendable and configurable. The Saiku RESTful server connects to existing OLAP systems, which powers user-friendly, intuitive analytics via our lightweight JQuery based frontend.
 	  </para>
 	  <para>
 	    <indexterm><primary>HTML</primary></indexterm>
 	    <indexterm><primary>Javascript</primary></indexterm>
 	    <indexterm><primary>CSS</primary></indexterm>
 	    <indexterm><primary>HTTP</primary></indexterm>
-	    <indexterm><primary>JSON</primary></indexterm>
-	    Look and feel can be completely customized as the user interface is based entirely on open standards. The supplied user interface is written in HTML, Javascript and CSS, making it easy to change or entirely replace the user interface. By using RESTful standards, the server can be easily integrated into different user interface technologies and 3rd party applications, the only requirements being that the 3rd party application can send and receive HTTP communication and understand JSON data instructions. The client application needs no understanding of MDX or related query languages.
+	    <indexterm><primary>JSON</primary></indexterm>Look and feel can be completely customized as the user interface is based entirely on open standards. The supplied user interface is written in HTML, Javascript and CSS, making it easy to change or entirely replace the user interface. By using RESTful standards, the server can be easily integrated into different user interface technologies and 3rd party applications, the only requirements being that the 3rd party application can send and receive HTTP communication and understand JSON data instructions. The client application needs no understanding of MDX or related query languages.
 	      <figure xml:id="ex.intro2">
 		<title>Intro Picture 2</title>
 		<mediaobject>

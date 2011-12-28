@@ -69,8 +69,7 @@ $ <command>call buildall.bat</command></screen>
       </info>
       <para>
 	<indexterm><primary>developing</primary></indexterm>
-	<indexterm><primary>eclipse</primary></indexterm>
-	Once you have cloned the public git repo (see step 1 above), you are left with a number of maven projects. These projects are setup for inclusion in Eclipse. If you want any Saiku going in any other IDE you need to use the according maven goal (like mvn eclipse)
+	<indexterm><primary>eclipse</primary></indexterm>Once you have cloned the public git repo (see step 1 above), you are left with a number of maven projects. These projects are setup for inclusion in Eclipse. If you want any Saiku going in any other IDE you need to use the according maven goal (like mvn eclipse)
       </para>
       <para>
 	<note>In either case you may see warnings in Eclipse indicating a bad JRE reference in your build paths. If so, you need to adjust the JRE used in the Eclipse build path (for each project) to point it to a valid 1.6 JRE.</note> 
@@ -80,8 +79,7 @@ $ <command>call buildall.bat</command></screen>
 	  <title>Import into Eclipse with Maven plugin</title>
 	</info>
 	<para>
-	  <indexterm><primary>eclipse</primary><secondary>import</secondary></indexterm>
-	  If you have an Eclipse plugin installed for Maven integration, such as http://maven.apache.org/eclipse-plugin.html, you can import Maven projects directly into Eclipse and the plugin will generate the correct Eclipse project metadata for you.
+	  <indexterm><primary>eclipse</primary><secondary>import</secondary></indexterm>If you have an Eclipse plugin installed for Maven integration, such as http://maven.apache.org/eclipse-plugin.html, you can import Maven projects directly into Eclipse and the plugin will generate the correct Eclipse project metadata for you.
 	</para>
 	<para>
 	  <screen>File->Import...

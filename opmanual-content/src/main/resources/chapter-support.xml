@@ -5,16 +5,14 @@
       <title>Support</title>
     </info>
     <para>
-      <indexterm xml:id="support-desc" class="startofrange"><primary>Support</primary></indexterm>
-      There are a number of ways you can get help with the Saiku software stack.
+      <indexterm xml:id="support-desc" class="startofrange"><primary>Support</primary></indexterm>There are a number of ways you can get help with the Saiku software stack.
     </para>
     <section>
       <info>
 	<title>Forums</title>
       </info>
       <para>
-	<indexterm><primary>forums</primary></indexterm>
-	We have a well established forums section. To get help swing by ask.analytical-labs.com and we shall endeavour to answer your queries as soon as possible.
+	<indexterm><primary>forums</primary></indexterm>We have a well established forums section. To get help swing by ask.analytical-labs.com and we shall endeavour to answer your queries as soon as possible.
       </para>
     </section>
     <section>
@@ -22,8 +20,7 @@
 	<title>IRC</title>
       </info>
       <para>
-	<indexterm><primary>IRC</primary></indexterm>
-	If you prefer more "real time" help and support. We have a very active and helpful community on the Saiku IRC channel. This can be found at ##saiku on the Freenode IRC network. Feel free to drop in and introduce yourself we'll be more than willing to answer any questions or queries you may have.
+	<indexterm><primary>IRC</primary></indexterm>If you prefer more "real time" help and support. We have a very active and helpful community on the Saiku IRC channel. This can be found at ##saiku on the Freenode IRC network. Feel free to drop in and introduce yourself we'll be more than willing to answer any questions or queries you may have.
       </para>
     </section>
     <section>
@@ -31,8 +28,7 @@
 	<title>Commercial Support</title>
       </info>
       <para>
-	<indexterm><primary>Commercial Support</primary></indexterm>
-	For customers who require Enterprise Support we offer a complete technical support solution. Support is available on an annual subscription basis. Support is provided via a dedicated support portal where customers can raise issues and support requests, track issue progress and receive responses from our full time support team.
+	<indexterm><primary>Commercial Support</primary></indexterm>For customers who require Enterprise Support we offer a complete technical support solution. Support is available on an annual subscription basis. Support is provided via a dedicated support portal where customers can raise issues and support requests, track issue progress and receive responses from our full time support team.
       </para>
       <para>
 	Support response times depend on the severity of the response. Severity one issues will receive a response within 4 hours, severity two within 1 business day and severity three within 2 business days. For more information on our support services and pricing please e-mail us contact@analytical-labs.com.
