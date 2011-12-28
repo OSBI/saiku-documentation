@@ -16,12 +16,12 @@
 	<itemizedlist>
 	  <listitem>
 	    <para>
-	      Core Javadocs: http://ci.analytical-labs.com/job/saiku-core/javadoc/
+	      <link xl:href="http://ci.analytical-labs.com/job/saiku-core/javadoc/">Core JavaDocs</link>
 	    </para>
 	  </listitem> 
 	  <listitem>
 	    <para>
-	      UI JSDocs: http://ci.analytical-labs.com/job/saiku-ui/JSDoc/
+	      <link xl:href="http://ci.analytical-labs.com/job/saiku-ui/JSDoc/">UI JSDocs</link>
 	    </para>
 	  </listitem>
 	</itemizedlist>
