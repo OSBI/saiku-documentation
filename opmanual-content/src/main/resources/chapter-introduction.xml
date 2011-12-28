@@ -14,7 +14,19 @@
 	<indexterm><primary>Microsoft Analysis Services</primary></indexterm>
 	<indexterm><primary>SAP BW</primary></indexterm>
 	<indexterm><primary>Oracle Hyperion</primary></indexterm>
-Saiku offers a user friendly, web based analytics solution that lets users, quickly and easily analyse corporate data and create and share reports. The solution connects to a range of OLAP Servers including Mondrian, Microsoft Analysis Services, SAP BW and Oracle Hyperion and can be deployed rapidly and cost effectively to allow users to explore data in real time. 
+	Saiku offers a user friendly, web based analytics solution that lets users, quickly and easily analyse corporate data and create and share reports. The solution connects to a range of OLAP Servers including Mondrian, Microsoft Analysis Services, SAP BW and Oracle Hyperion and can be deployed rapidly and cost effectively to allow users to explore data in real time. 
+	<figure xml:id="ex.intro1">
+	  <title>Intro Pic 1</title>
+	  <mediaobject>
+	    <imageobject condition="print">
+	      <imagedata fileref="figs/print/intro1.png"/>
+	    </imageobject>
+	    <imageobject condition="web">
+	      <imagedata fileref="figs/web/intro1.png"/>
+	    </imageobject>
+	    <textobject><phrase>An example of a Saiku query</phrase></textobject>
+	  </mediaobject>
+	</figure>
       </para>
       <para>
 	<section>
@@ -49,6 +61,18 @@ Saiku offers a user friendly, web based analytics solution that lets users, quic
 	    <indexterm><primary>HTTP</primary></indexterm>
 	    <indexterm><primary>JSON</primary></indexterm>
 	    Look and feel can be completely customized as the user interface is based entirely on open standards. The supplied user interface is written in HTML, Javascript and CSS, making it easy to change or entirely replace the user interface. By using RESTful standards, the server can be easily integrated into different user interface technologies and 3rd party applications, the only requirements being that the 3rd party application can send and receive HTTP communication and understand JSON data instructions. The client application needs no understanding of MDX or related query languages.
+	      <figure xml:id="ex.intro2">
+		<title>Intro Picture 2</title>
+		<mediaobject>
+		  <imageobject condition="print">
+		    <imagedata fileref="figs/print/intro2.png"/>
+		  </imageobject>
+		  <imageobject condition="web">
+		    <imagedata fileref="figs/web/intro2.png"/>
+		  </imageobject>
+		  <textobject><phrase>An example of a Saiku query</phrase></textobject>
+		</mediaobject>
+	      </figure>
 	  </para>
 	</section>
 	<section>
