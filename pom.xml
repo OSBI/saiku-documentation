@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.saikuanalytics.book</groupId>
+    <artifactId>saiku</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Saiku Documentation</name>
+    <description>How to install and configure the Saiku Server</description>
+    <url>http://www.analytical-labs.com</url>
+    <organization>
+        <name>Analytical Labs</name>
+        <url>http://www.analytical-labs.com</url>
+    </organization>
+    <scm>
+<!--<connection>scm:git:git@github.com:wakaleo/continuous-integration-with-hudson.git</connection>
+<url>scm:git:git@github.com:wakaleo/continuous-integration-with-hudson.git</url>
+<developerConnection>scm:git:git@github.com:wakaleo/continuous-integration-with-hudson.git</developerConnection>-->
+    </scm>
+    <properties>
+        <book.title>How to install, configure and maintain the Saiku Server</book.title>
+        <book.subtitle></book.subtitle>
+	<book.abstract>Installing, configuring and maintaining your Saiku Server</book.abstract>
+        <book.principle.author>Tom Barber</book.principle.author>
+        <organization.address>Surrey Technology Centre, Surrey Research Park, 40 Occam Road, Guildford, GU2 7YG</organization.address>
+        <publisher.name>Analytical Labs</publisher.name>
+        <publisher.address>Surrey Technology Centre, Surrey Research Park, 40 Occam Road, Guildford, GU2 7YG</publisher.address>
+        <copyright.year>2011</copyright.year>
+        <book.locale>en</book.locale>
+    </properties>
+    <repositories>
+      <repository>
+	<id>sonatype-public</id>
+	<name>Sonatype Public</name>
+	<url>http://repository.sonatype.org/content/groups/public</url>
+	
+	<snapshots>
+	  <enabled>true</enabled>
+	</snapshots>
+      </repository>
+      <repository>
+        <id>alabs repo</id>
+        <name>alabs repo-releases</name>
+        <url>http://repo.analytical-labs.com/artifactory/thirdparty-release</url>
+      </repository>
+      
+      <!--        <repository>
+            <id>sonatype-forge</id>
+            <name>Sonatype Forge</name>
+	    
+            <url>http://repository.sonatype.org/content/groups/forge</url>
+            <snapshots>
+	    <enabled>true</enabled>
+            </snapshots>
+	    </repository>
+	    <repository>
+            <id>Codehaus Snapshots</id>
+	    
+            <url>http://snapshots.repository.codehaus.org</url>
+            <snapshots>
+	    <enabled>true</enabled>
+            </snapshots>
+            <releases>
+	    <enabled>false</enabled>
+            </releases>
+	    
+	    </repository>
+        <repository>
+	<id>Central</id>
+	<url>http://repo1.maven.org/maven2</url>
+	<snapshots>
+	<enabled>false</enabled>
+	</snapshots>
+
+<releases>
+<enabled>true</enabled>
+</releases>
+</repository>-->
+    </repositories>
+    
+    <developers>
+        <developer>
+            <id>tom</id>
+            <name>Tom Barber</name>
+            <email>tom@analytical-labs.com</email>
+            <organization>Analytical Labs</organization>
+            <organizationUrl>http://www.analytical-labs.com</organizationUrl>
+            <roles>
+                <role>Author</role>
+            </roles>
+        </developer>
+    </developers>
+  <modules>
+    <module>opmanual-content</module>
+    <module>opmanual-pdf</module>
+    <module>opmanual-html</module>
+  </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0-beta-9</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <preparationGoals>clean install</preparationGoals>
+                </configuration>
+            </plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-release-plugin</artifactId>
+<version>2.0-beta-9</version>
+</plugin>
+        </plugins>
+    </build>
+    <profiles>
+<!--<profile>
+<id>french</id>
+<properties>
+<book.locale>fr</book.locale>
+         <book.title>L'Integration Continue avec Hudson</book.title>
+<book.subtitle>Un sous-titre super-engageant pour ce livre</book.subtitle>
+<book.abstract>Un resume super-engageant pour ce livre</book.abstract>
+</properties>
+</profile>-->
+</profiles>
+    <!-- Distribution Management -->
+    <distributionManagement>
+<!--        <repository>
+            <id>wakaleo-releases</id>
+            <url>http://www.wakaleo-labs.com/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>wakaleo-snapshots</id>
+            <url>http://www.wakaleo-labs.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>-->
+    </distributionManagement>
+</project>
+

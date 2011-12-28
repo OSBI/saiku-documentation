@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Converted by db4-upgrade version 1.0 -->
+<book version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink"
+      xmlns:ns6="http://www.w3.org/1999/xlink"
+      xmlns:ns5="http://www.w3.org/1998/Math/MathML"
+      xmlns:ns4="http://www.w3.org/1999/xhtml"
+      xmlns:ns3="http://www.w3.org/2000/svg"
+      xmlns:ns="http://docbook.org/ns/docbook">
+  <info> 
+    <title>${book.title}</title>
+    <subtitle></subtitle>
+    <releaseinfo>Documentation in progress</releaseinfo>
+    <authorgroup>
+      <author>
+	<personname>
+	  <firstname>
+	    Tom
+	  </firstname>
+	  <surname>
+	    Barber
+	  </surname>
+	</personname>
+      </author>
+    </authorgroup>
+
+    <address>
+      <email>tom.barber@ecommera.co.uk</email>
+    </address>
+    
+    <!--    <copyright>
+	 <year>2010</year>
+	 
+	 <holder>eCommera Ltd</holder>
+	 </copyright>
+	 
+	 <legalnotice>
+	 <para>Don't share this with no-one</para>
+	 </legalnotice>-->
+    
+    <revhistory>
+      <revision>
+	<revnumber>0.0</revnumber>
+	<date>2010-12-22</date>
+	<authorinitials>tb</authorinitials>
+	<revremark>Initial formatting</revremark>
+      </revision>
+    </revhistory>
+  </info>
+  <xi:include href="copyright.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <xi:include href="preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="chapter-introduction.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="chapter-quickstart.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="chapter-support.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <index></index>
+</book>
+
