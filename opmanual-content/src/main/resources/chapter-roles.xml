@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <chapter xml:id="Roles" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+    <info>
+      <title>Role Based Security</title>
+    </info>
+    
+    <section>
+      <info>
+        <title>Mondrian Roles</title>
+      </info>
+      <para>
+	The users are stored in WEB-INF/users.properties in the following format (one user per line) username=password,role. You can edit this file to remove the default users and to create new users with the ROLE_USER role.
+      </para>
+    </section>
+ </chapter>

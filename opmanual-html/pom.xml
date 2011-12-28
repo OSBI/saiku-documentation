@@ -80,6 +80,9 @@
              <copy todir="${project.build.directory}/html/css">
                <fileset dir="${basedir}/src/main/resources/css" />
                </copy>
+             <copy todir="${project.build.directory}/html/figs">
+               <fileset dir="target/docbook/figs" />
+             </copy>
 
 						<!--<copy todir="${project.build.directory}/html/figs/web">
 							<fileset dir="target/docbook/figs/web" />

@@ -62,6 +62,18 @@
     </info>
     <para>
       This section will provide some basic background knowledge on data warehousing, Mondrian, ETL and Cube design tools. In order for the end user to be able to analyze the data, it has to be first sourced from the various databases/data stores. An ETL (short for Extract, Transform and Load) process will prepare the data as required and then usually output it to the data warehouse. A data warehouse can be thought of as a dedicated data store for analytical queries. Sometimes data is also custom prepared for to answer certain questions and hence stored in data marts. The OLAP cube is an abstraction layer on top of the data warehouse and data marts, which is access by various front end tools: drag and drop web GUI, dashboards, reports, etc.
+      <figure xml:id="ex.olapdia">
+	<title>OLAP Diagram</title>
+	<mediaobject>
+	  <imageobject condition="print">
+	    <imagedata fileref="figs/print/dia1.png"/>
+	  </imageobject>
+	  <imageobject condition="web">
+	    <imagedata fileref="figs/web/dia1.png"/>
+	  </imageobject>
+	  <textobject><phrase>An illustration of the OLAP Systems</phrase></textobject>
+	</mediaobject>
+      </figure>
       <section>
 	<info>
 	  <title>Data Warehouse</title>
@@ -80,6 +92,18 @@
 		</info>
 		<para>
 		  The idea is fairly simple: All your data can be categorized as dimensions or measures. Dimensions are basically the elements which allow you to slice and dice your data, whereas measures are the real figures.
+		  <figure xml:id="ex.stardia">
+		    <title>Star Diagram</title>
+		    <mediaobject>
+		      <imageobject condition="print">
+			<imagedata fileref="figs/print/star.png"/>
+		      </imageobject>
+		      <imageobject condition="web">
+			<imagedata fileref="figs/web/star.png"/>
+		      </imageobject>
+		      <textobject><phrase>An illustration of a Star Schema</phrase></textobject>
+		    </mediaobject>
+		  </figure>
 		  <section>
 		    <info>
 		      <title>Fact Table</title>
@@ -131,8 +155,287 @@
 		  <title>Snowflake Schema</title>
 		</info>
 		<para>
+		  This snowflake schema is quite similar to the star schema with the exception that some dimensions are normalized by one more degree. 
+		  <figure xml:id="ex.snowflakedia">
+		    <title>Snowflake Schema</title>
+		    <mediaobject>
+		      <imageobject condition="print">
+			<imagedata fileref="figs/print/snowflake.png"/>
+		      </imageobject>
+		      <imageobject condition="web">
+			<imagedata fileref="figs/web/snowflake.png"/>
+		      </imageobject>
+		      <textobject><phrase>An illustration of a Snowflake schema</phrase></textobject>
+		    </mediaobject>
+		  </figure>
 		</para>
 	      </section>
+	      <section>
+		<info>
+		  <title>Completely Denormalized</title>
+		</info>
+		<para>
+		  At the other end of the spectrum we have the completely denormalized fact table, which basically means that this table holds all the data. This is popular approach for Agile BI due to its simplicity and ease to adopt change. Normally it takes quite some time to implement the ETL process to populate a star or snowflake schemata. Creating an ETL process to populate a denormalized table is usually less time intensive. 
+		</para>
+	      </section>
+	      <section>
+		<info>
+		  <title>Hybrid Approach</title>
+		</info>
+		<para>
+		  To combine the advantages of both above mentioned approaches it is sometimes a good idea to find a compromise. You might want to store some data in dimensional tables, but keep other in the fact table. The number of dimensional tables will be small. This allows to to be still fairly flexible with your data model.
+		</para>
+		<para>
+		  It is also worth mentioning that it is a good approach to start off a project with a completely denormalized model as it is (1) fairly quick to implement and (2) easy to implement customer feedback. Once the data model has stabilized, a hybrid or start/snowflake schema approach can be implemented next if required.
+		</para>
+	      </section>
+	    </para>
+	  </section>
+	  <section>
+	    <info>
+	      <title>OLAP Schema</title>
+	    </info>
+	    <para>
+	      You can think of the OLAP Schema as an abstraction layer on top of the data warehouse. In a nutshell, you define in your OLAP schema:
+	      <itemizedlist>
+		<listitem>
+		  <para>
+		    measures (the figures)
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    dimensions (allow you want to slice and dice your figures)
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    how the underlying tables are linked together
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    formatting
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    access rights
+		  </para>
+		</listitem>
+		<listitem>
+		  <para>
+		    etc
+		  </para>
+		</listitem>
+	      </itemizedlist>
+	    </para>
+	    <para>
+	      It is worth mentioning that you have complete freedom about the layout. You can mirror the data warehouse layout, but in most cases it is more appropriate to create dedicated cubes for special purposes. In example, a sales person will most definitely not be interested in the exact some data as a marketing person. It makes sense to create cubes that are able to answer certain questions.
+	    </para>
+	  </section>
+	</para>
+      </section>
+    </para>
+  </section>
+  <section>
+    <info>
+      <title>Software</title>
+    </info>
+    <para>
+      <section>
+	<info>
+	  <title>Mondrian OLAP Server</title>
+	</info>
+	<para>
+	  Mondrian is an established open-source OLAP Server written in Java. As it is written in Java, it runs basically on any platform that Java is available for. Mondrian also implements a lot of other open standards like:
+	  <itemizedlist>
+	    <listitem>
+	      <para>
+		MDX (multi-dimensional expressions): standard multi-dimensional query language
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		XMLA (XML for Analysis): Industry standard for data access in analytical systems
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		OLAP4J (on-line analytical processing for Java): open Java API for OLAP which allows you to write an analytical application for one server and easily switch it to another one.
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	  Mondrian can be run as stand-alone server or as part of a business intelligence server. Mondrian is by default included in the Pentaho BI Server and Jaspersoft BI Server.
+	</para>
+      </section>
+      <section>
+	<info>
+	  <title>Data Warehouse</title>
+	</info>
+	<para>
+	  The output of your ETL process has to be stored on a database which is fast enough to answer analytical queries. In recent years columnar databases gained great momentum as the ideal base for a data warehouse. While it might be fine to store small amounts of data on a transactional database, once the amount of data grows, the query performance will decrease considerably.
+	</para>
+	<para>
+	  We conducted an internal benchmark on columnar database and Actian VectorWise was the clear winner.
+	</para>
+      </section>
+      <section>
+	<info>
+	  <title>Pentaho Data Integration with Agile BI Plugin</title>
+	</info>
+	<para>
+	  You are looking for a tool which allows to create your ETL process, your OLAP schema and offers a drag and drop OLAP GUI - all under one hood, then you have found your ideal match in Pentaho Data Integration (short PDI, aka Kettle).
+	</para>
+	<para>
+	  PDI is mainly known for its ETL features. In the last 2 years these core feature have been extended by plug-ins. One of these plug-ins is the Agile BI plug-in, which adds additional perspectives to the GUI to create OLAP Schemata and to visualize them. The great thing about this is that it all works together: So you can create your ETL process, let Kettle auto-generate an OLAP Schema based on the ETL process output and then instantly analyze the data using the built-in OLAP Analyzer GUI. This allows you to speed up your development process considerable and spot problems early enough.
+	</para>
+	<para>
+	  PDI allows to switch between the stages using the perspective views:
+	  <figure xml:id="ex.perspectivedia">
+	    <title>Perspective Views</title>
+	    <mediaobject>
+	      <imageobject condition="print">
+		<imagedata fileref="figs/print/perspectiveviews.png"/>
+	      </imageobject>
+	      <imageobject condition="web">
+		<imagedata fileref="figs/web/perspectiveviews.png"/>
+	      </imageobject>
+	      <textobject><phrase>An illustration of the Perspective views</phrase></textobject>
+	    </mediaobject>
+      </figure>
+	  Find below a typical workflow in PDI (extremely simplified model for illustration purposes only):
+	  <orderedlist>
+	    <listitem>
+	      <para>
+		Create your ETL process
+		<figure xml:id="ex.createprocess">
+		  <title>Create Process</title>
+		  <mediaobject>
+		    <imageobject condition="print">
+		      <imagedata fileref="figs/print/etlprocess.png"/>
+		    </imageobject>
+		    <imageobject condition="web">
+		      <imagedata fileref="figs/web/etlprocess.png"/>
+		    </imageobject>
+		    <textobject><phrase>An illustration of the OLAP Creation Process</phrase></textobject>
+		  </mediaobject>
+		</figure>
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		Create your OLAP schema. PDI offers an auto-generator, but as with all of these “auto-generators”, there is still human input necessary to create a sensible model.
+		<figure xml:id="ex.">
+		  <title>OLAP Diagram</title>
+		  <mediaobject>
+		    <imageobject condition="print">
+		      <imagedata fileref="figs/print/createolap.png"/>
+		    </imageobject>
+		    <imageobject condition="web">
+		      <imagedata fileref="figs/web/createolap.png"/>
+		    </imageobject>
+		    <textobject><phrase>An illustration of the OLAP Systems</phrase></textobject>
+		  </mediaobject>
+		</figure>
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		Analyze the data using the built-in Pentaho Analyzer:
+		<figure xml:id="ex.analyze">
+		  <title>Analyze</title>
+		  <mediaobject>
+		    <imageobject condition="print">
+		      <imagedata fileref="figs/print/analyze.png"/>
+		    </imageobject>
+		    <imageobject condition="web">
+		      <imagedata fileref="figs/web/analyze.png"/>
+		    </imageobject>
+		    <textobject><phrase>An illustration of Analyzer</phrase></textobject>
+		  </mediaobject>
+		</figure>
+	      </para>
+	    </listitem>
+	  </orderedlist>
+	  This is an iterative process: Usually when analyzing your data you will find some problems in your data and go back to your ETL process to fix this.
+	</para>
+	<para>
+	  While in theory combining all these feature in one tool sounds extremely good, we found that currently (PDI 4.2.1) functionality is quite limited in terms of OLAP schema design. While we appreciate the ease of creating a new schema, a lot of design options are missing that are available in the standalone product Mondrian Schema Workbench. We only hope that over time all these feature will be eventually integrated into PDI.
+	</para>
+	<para>
+	  PDI allows you to create an OLAP schema as well as a metadata model. Both files are stored within an XMI file. While to some degree this makes sense (both models try to achieve more or less the same objective), it is currently not possible to extract the OLAP model and use Mondrian Schema Workbench to add the more advanced options to the OLAP schema.
+	</para>
+      </section>
+      <section>
+	<info>
+	  <title>Other Mondrian OLAP Design Tools</title>
+	</info>
+	<para>
+	  <section>
+	    <info>
+	      <title>Mondrian Schema Workbench</title>
+	    </info>
+	    <para>
+	      This is the mother of all Mondrian OLAP schema designers as it allows specifying all available options. While the interface is very simple, it gets the job done:
+	      <figure xml:id="ex.psw">
+		<title>Pentaho Schema Workbench</title>
+		<mediaobject>
+		  <imageobject condition="print">
+		    <imagedata fileref="figs/print/psw.png"/>
+		  </imageobject>
+		  <imageobject condition="web">
+		    <imagedata fileref="figs/web/psw.png"/>
+		  </imageobject>
+		  <textobject><phrase>An illustration of the Pentaho Schema Workbench</phrase></textobject>
+		</mediaobject>
+	      </figure>
+	    </para>
+	  </section>
+	  <section>
+	    <info>
+	      <title>SQLPower Architect</title>
+	    </info>
+	    <para>
+	      The Canadian company SQLPower offers a tool called Architect which is primarily targeted at database design, but offers as an additional bonus Mondrian schema design functionality as well. 
+	      <figure xml:id="ex.architect">
+		<title>Architect</title>
+		<mediaobject>
+		  <imageobject condition="print">
+		    <imagedata fileref="figs/print/architect.png"/>
+		  </imageobject>
+		  <imageobject condition="web">
+		    <imagedata fileref="figs/web/architect.png"/>
+		  </imageobject>
+		  <textobject><phrase>An illustration of the SQL Power Architect</phrase></textobject>
+		</mediaobject>
+	      </figure>
+	    </para>
+	    <para>
+	      This feature got implemented in 2009 and SQLPower seems to have stopped development on their software tools at the beginning of 2011.
+	    </para>
+	    <para>
+	      SQLPower Architect offers a basic functionality to create a Mondrian OLAP schema based on a star schema. It doesn’t seem to be possible to base your OLAP schema on top of a denormalized table. While the current implementation is quite nice, it is limited and the biggest concern is that SQLPower doesn’t seem to be further developing the tool.
+	    </para>
+	  </section>
+	  <section>
+	    <info>
+	      <title>Text or XML Editor</title>
+	    </info>
+	    <para>
+	      Users familiar with XML can create their OLAP schema using a standard text editor or XML editor. Ideally the XML should be validated before export to avoid nasty surprises.
+	      <figure xml:id="ex.gedit">
+		<title>GEdit</title>
+		<mediaobject>
+		  <imageobject condition="print">
+		    <imagedata fileref="figs/print/gedit.png"/>
+		  </imageobject>
+		  <imageobject condition="web">
+		    <imagedata fileref="figs/web/gedit.png"/>
+		  </imageobject>
+		  <textobject><phrase>An illustration of an XML editor</phrase></textobject>
+		</mediaobject>
+	      </figure>
 	    </para>
 	  </section>
 	</para>
