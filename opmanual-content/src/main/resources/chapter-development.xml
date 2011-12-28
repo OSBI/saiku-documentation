@@ -46,7 +46,7 @@ $ <command>call buildall.bat</command></screen>
 	    The most commonly used package is the saiku-server package. It includes the saiku webapps deployed on a tomcat (with or without sample data). The server package with foodmart can be found at: 
 	    </para>
 	    <para>
-	      <screen>./saiku/saiku-/server/target/dist/saiku-server/</screen>
+	      <screen>./saiku/saiku-server/target/dist/saiku-server/</screen>
 	    </para>
 	    <para>
 	      cd there and run the script start-saiku.sh / start-saiku.bat depending on your platform. Saiku server will then be available (in Tomcat) at <link xl:href="http://localhost:8080/">http://localhost:8080</link> with enunciate docs at <link xl:href="http://localhost:8080/saiku/serverdocs/">http://localhost:8080/saiku/serverdocs</link>

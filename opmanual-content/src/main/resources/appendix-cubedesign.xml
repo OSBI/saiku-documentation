@@ -6,10 +6,137 @@
   </info>
   <section>
     <info>
-      <title>Designing Your Cube</title>
+      <title>Introduction</title>
     </info>
     <para>
-      How to....
+      <section>
+	<info>
+	  <title>Why Multidimensional Modeling</title>
+	</info>
+	<para>
+	  Multidimensional analysis is far more than fancy drag and drop GUIs are able to reveal. First we have to answer the questions why we need multidimensional modeling. For a long time SQL (Structured Query Language) was the de-facto standard for data analysis. SQL proved unsuitable or too complex for many business analysis questions, this was when multidimensional analysis was born. Microsoft was one of the first companies to create a dedicated query language called MDX (Multi-Dimensional eXpressions) for this purpose. MDX became soon the new de-facto standard for multi-dimensional analysis and every major player implemented it. MDX is so more powerful than SQL and able to answer complex business questions.
+	</para>
+	<para>
+	  Each OLAP (short for On-Line Analytic Processing) Cube is defined by a OLAP schema and MDX queries reference this definition. The OLAP cube schema acts as an abstraction layer as well, usually with the additional benefit of standardization and access control. Even if for example the column name of one table changes, only the cube definition has to be changed and not any queries. This is a huge additional benefit.
+	</para>
+	<para>
+	  There are various OLAP servers on the market which can be mainly differentiated by the way they access data:
+	  <itemizedlist>
+	    <listitem>
+	      <para>
+		ROLAP (Relational OLAP): The data is directly queried from a relational database.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		MOLAP (Multidimensional OLAP): The OLAP server stores the data in memory. This kind of restricts how much data can be processed.
+	      </para>
+	    </listitem>
+	    <listitem>
+	      <para>
+		HOLAP (Hybrid OLAP): This is a compromise of the two above approaches where some data (mostly aggregated one) is stored in memory and the rest on disk.
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	</para>
+	<para>
+	  In this article we will be working with Mondrian, an open-source OLAP Server. The recent release of Mondrian has full in-memory support, hence the lines between ROLAP and MOLAP get quite blurred.
+	</para>
+      </section>
+      <section>
+	<info>
+	  <title>Use Cases</title>
+	</info>
+	<para>
+	  Most user will be familiar with Microsoft Excel Pivot Tables. In it’s very own way, this could be thought of as the very first multi-dimensional analysis tool reaching a mass audience. While Excel Pivot tables are a fine solution for working with small amounts of data, proper business intelligence solutions require a dedicated OLAP server and web GUIs which optionally allow to export the data in example to Excel.
+	</para>
+	<para>
+	  Multi-dimensional analysis is not just about fancy drag and drop GUIs, but result sets can be also used in standard reports and dashboards. 
+	</para>
+      </section>
+    </para>
+  </section>
+  <section>
+    <info>
+      <title>Methodology</title>
+    </info>
+    <para>
+      This section will provide some basic background knowledge on data warehousing, Mondrian, ETL and Cube design tools. In order for the end user to be able to analyze the data, it has to be first sourced from the various databases/data stores. An ETL (short for Extract, Transform and Load) process will prepare the data as required and then usually output it to the data warehouse. A data warehouse can be thought of as a dedicated data store for analytical queries. Sometimes data is also custom prepared for to answer certain questions and hence stored in data marts. The OLAP cube is an abstraction layer on top of the data warehouse and data marts, which is access by various front end tools: drag and drop web GUI, dashboards, reports, etc.
+      <section>
+	<info>
+	  <title>Data Warehouse</title>
+	</info>
+	<para>
+	  As already mentioned, the data warehouse stores that data in a way that it is easy and fast to access for analytical queries. There are various established methodologies to achieve this:
+	  <section>
+	    <info>
+	      <title>Star and Snowflake Schema</title>
+	    </info>
+	    <para>
+	      Ralph Kimball’s start and snowflake schemata are the classic data warehouse models. It is a structured way of getting your data ready for analytical queries. These models have been around for the last 15 years and were the preferred solution for a long time. In recent years new emerging technologies have challenged this approach to some extend. Let’s have a quick overview of this approach:
+	      <section>
+		<info>
+		  <title>Star Schema</title>
+		</info>
+		<para>
+		  The idea is fairly simple: All your data can be categorized as dimensions or measures. Dimensions are basically the elements which allow you to slice and dice your data, whereas measures are the real figures.
+		  <section>
+		    <info>
+		      <title>Fact Table</title>
+		    </info>
+		    <para>
+		      The core of the star schema is your fact table. A fact table consists of
+		      <itemizedlist>
+			<listitem>
+			  <para>
+			    technical keys which point to dimensional tables.
+			  </para>
+			</listitem>
+			<listitem>
+			  <para>
+			  measures (the real figures)
+			  </para>
+			</listitem>
+			<listitem>
+			  <para>
+			    and optionally degenerated dimensions
+			  </para>
+			</listitem>
+		      </itemizedlist>
+		    </para>
+		  </section>
+		  <section>
+		    <info>
+		      <title>Dimension Tables</title>
+		    </info>
+		    <para>
+		      These table hold all the data about your dimensions. A classic example is the date dimension: People want to slice and dice data by various date attributes, like year, quarter, month, day. The date dimension can get quite wide (many columns) as there are so many date attributes. So instead of storing all this data in the fact table, you create a dedicated date dimension for it. The golden rule is: If a dimension has a lot of attributes, create a dedicated table for it.
+		    </para>
+		    <para>
+		      Each record in the dimension table gets assigned a unique technical key. This key is used in the fact table to reference the dimensional record.
+		    </para>
+		  </section>
+		<section>
+		  <info>
+		    <title>Degenerated Dimensions</title>
+		  </info>
+		  <para>
+		    Remember the golden rule we just mentioned? That’s where degenerated dimensions come in: They are kind of the opposite, meaning, dimensions without any additional attributes. A typical example is gender. These dimensional values can be stored directly in the fact table.
+		  </para>
+		</section>
+		</para>
+	      </section>
+	      <section>
+		<info>
+		  <title>Snowflake Schema</title>
+		</info>
+		<para>
+		</para>
+	      </section>
+	    </para>
+	  </section>
+	</para>
+      </section>
     </para>
   </section>
 </appendix>
