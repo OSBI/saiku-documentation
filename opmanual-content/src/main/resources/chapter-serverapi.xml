@@ -10,6 +10,8 @@
         <title>Server Documentation</title>
       </info>
       <para>
+	<indexterm><primary>API</primary></indexterm>
+	<indexterm><primary>JavaDoc</primary></indexterm>
 	If you are interested in finding out more about the inner workings of the Saiku server please checkout our Javadocs and inbuilt Enunciate documentation. 
       </para>
       <para>
@@ -26,7 +28,11 @@
 	  </listitem>
 	</itemizedlist>
       </para>
-      <para>Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
+      <para>
+	<indexterm><primary>Enunciate</primary></indexterm>
+	<indexterm><primary>RESTful</primary></indexterm>
+	<indexterm><primary>documentation</primary></indexterm>
+	Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
       
       In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/">http://demo.analytical-labs.com/saiku/serverdocs/</link>
       

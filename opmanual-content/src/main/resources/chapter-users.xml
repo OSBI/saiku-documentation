@@ -10,6 +10,7 @@
         <title>Adding New Users To The Default Security Configuration</title>
       </info>
       <para>
+	<indexterm><primary>Users</primary><secondary>Adding</secondary></indexterm>
 	The users are stored in WEB-INF/users.properties in the following format (one user per line) username=password,role. You can edit this file to remove the default users and to create new users with the ROLE_USER role.
       </para>
       <para>
@@ -21,6 +22,8 @@
 	<title>Changing Authentication Mechanisms</title>
       </info>
       <para>
+	<indexterm><primary>Authentication</primary></indexterm>
+	<indexterm><primary>Spring</primary></indexterm>
 	By default we use an in memory authentication mechanism. This loads up a list of users and their roles into memory when the server is started and then users are authenticated against it. Many businesses have their own security implementation, whether it be a full Active Directory setup, or a database table with lists of users in them.
       </para>
       <para>

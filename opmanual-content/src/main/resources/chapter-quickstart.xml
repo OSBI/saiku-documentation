@@ -10,6 +10,7 @@
         <title>How to get started in a hurry</title>
       </info>
       <para>
+	<indexterm><primay>Quick Start</primay></indexterm>
 	Because we are nice folks here at Analytical Labs we like to make your lives as easy as possible. To get started with Saiku we have created a bundle that has a sample set of data that means you can install and evaluate Saiku without having to supply your own data set and cube if you don't have one, or even know what a cube is.
       </para>
       <para>

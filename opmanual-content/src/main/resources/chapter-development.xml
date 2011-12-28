@@ -10,6 +10,8 @@
         <title>Building Saiku</title>
       </info>
       <para>
+	<indexterm><primary>building</primary></indexterm>
+	<indexterm><primary>git</primary></indexterm>
 	<section>
 	  <info>
 	    <title>Get the source and create a local working branch</title>
@@ -66,6 +68,8 @@ $ <command>call buildall.bat</command></screen>
 	<title>Developing Saiku in Eclipse</title>
       </info>
       <para>
+	<indexterm><primary>developing</primary></indexterm>
+	<indexterm><primary>eclipse</primary></indexterm>
 	Once you have cloned the public git repo (see step 1 above), you are left with a number of maven projects. These projects are setup for inclusion in Eclipse. If you want any Saiku going in any other IDE you need to use the according maven goal (like mvn eclipse)
       </para>
       <para>
@@ -76,6 +80,7 @@ $ <command>call buildall.bat</command></screen>
 	  <title>Import into Eclipse with Maven plugin</title>
 	</info>
 	<para>
+	  <indexterm><primary>eclipse</primary><secondary>import</secondary></indexterm>
 	  If you have an Eclipse plugin installed for Maven integration, such as http://maven.apache.org/eclipse-plugin.html, you can import Maven projects directly into Eclipse and the plugin will generate the correct Eclipse project metadata for you.
 	</para>
 	<para>

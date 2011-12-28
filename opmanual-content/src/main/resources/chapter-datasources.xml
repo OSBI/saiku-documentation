@@ -10,6 +10,7 @@
         <title>Adding A New Data Source</title>
       </info>
       <para>
+	<indexterm><primary>Data Source</primary></indexterm>
 	Whilst we haven't yet had the time or resource to create a lovely graphical admin console for you system administrators we have tried to make it simple for you to add data sources to the Saiku platform.
       </para>
       <para>
@@ -37,6 +38,7 @@ password=password
 	  <title>Adding a new JDBC Driver</title>
 	</info>
       <para>
+	<indexterm><primary>JDBC</primary><secondary>Drivers</secondary></indexterm>
 	Obviously not everyone uses Hypersonic or MySQL to connect to their data warehouses. To use your specific database, please add the JDBC connector jar file to saiku-server/tomcat/webapps/saiku/WEB-INF/lib/ and then make the appropriate changes to the jdbc portion of the location string in the connection file.
       </para>
       </section>
