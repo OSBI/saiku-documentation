@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <chapter xml:id="Development" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+    <info>
+      <title>Development</title>
+    </info>
+    
+    <section>
+      <info>
+        <title>How to get started in a hurry</title>
+      </info>
+      <para>
+      </para>
+    </section>
+ </chapter>

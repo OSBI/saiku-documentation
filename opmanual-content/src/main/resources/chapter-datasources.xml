@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <chapter xml:id="DataSources" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+    <info>
+      <title>Data Sources</title>
+    </info>
+    
+    <section>
+      <info>
+        <title>Adding A New Data Source</title>
+      </info>
+      <para>
+	Whilst we haven't yet had the time or resource to create a lovely graphical admin console for you system administrators we have tried to make it simple for you to add data sources to the Saiku platform.
+      </para>
+      <para>
+	The Saiku server is shipped with Foodmart by default. So I shall show you how to import the steel-wheels schema and configure it to use a MySQL database connection.
+      </para>
+      <para>
+	Firstly navigate to saiku-server/tomcat/webapps/saiku/WEB-INF/classes/saiku-datasources/ and copy the file named foodmart and rename it steelwheels. Next edit this new steelwheels file and configure it in a similar way to the following:
+      </para>
+      <para>
+	<screen>
+type=OLAP
+name=steelwheels
+driver=mondrian.olap4j.MondrianOlap4jDriver
+location=jdbc:mondrian:Jdbc=jdbc:mysql://localhost/sampledata;Catalog=../webapps/saiku/steelwheels/steelwheels.mondrian.xml;JdbcDrivers=com.mysql.jdbc.Driver;
+username=dbuser
+password=password
+	</screen>
+      </para>
+      <para>
+	So what we have done here is told Saiku the new name of the connection is steelwheels. We then told Saiku the location of the database and mondrian schema, for which I have created a steelwheels folder under the webapp/ directory. We finally set the database username and password. Once you have installed your schema definition, restart your server. It doesn't get much simpler than that.
+      </para>
+    </section>
+      <section>
+	<info>
+	  <title>Adding a new JDBC Driver</title>
+	</info>
+      <para>
+	Obviously not everyone uses Hypersonic or MySQL to connect to their data warehouses. To use your specific database, please add the JDBC connector jar file to saiku-server/tomcat/webapps/saiku/WEB-INF/lib/ and then make the appropriate changes to the jdbc portion of the location string in the connection file.
+      </para>
+      </section>
+ </chapter>

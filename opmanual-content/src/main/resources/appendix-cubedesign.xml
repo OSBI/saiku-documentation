@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="CubeDesign" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+  <info>
+    <title>Cube Design</title>
+  </info>
+  <section>
+    <info>
+      <title>Designing Your Cube</title>
+    </info>
+    <para>
+      How to....
+    </para>
+  </section>
+</appendix>

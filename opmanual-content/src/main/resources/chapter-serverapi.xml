@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <chapter xml:id="ServerAPI" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+    <info>
+      <title>Server API and Documentation</title>
+    </info>
+    
+    <section>
+      <info>
+        <title>Server Documentation</title>
+      </info>
+      <para>
+	If you are interested in finding out more about the inner workings of the Saiku server please checkout our Javadocs and inbuilt Enunciate documentation. 
+      </para>
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      Core Javadocs: http://ci.analytical-labs.com/job/saiku-core/javadoc/
+	    </para>
+	  </listitem> 
+	  <listitem>
+	    <para>
+	      Webapp Javadocs: http://ci.analytical-labs.com/job/saiku-webapp/javadoc/ 
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+      <para>Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
+      
+      In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/index.html">http://demo.analytical-labs.com/saiku/serverdocs/index.html</link>
+      
+      or if you have your own installation: <link xl:href="http://localhost/saiku/serverdocs/index.html">http://localhost/saiku/serverdocs/index.html</link>
+      
+      Just hit login on any login screens that may appear. 
+      </para>
+    </section>
+    <section>
+      <info>
+	<title>Helper Libraries</title>
+      </info>
+      <para>
+	Also Enunciate provides a few helper libraries out of the box for different clients. Currently enabled we have
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      C Client
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      .NET Client
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      Java Client
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      Java JSON Client
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      Objective C Client
+	    </para>
+	  </listitem>
+	</itemizedlist>
+	And you can find out far more about these here:
+	
+	<link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/downloads.html">http://demo.analytical-labs.com/saiku/serverdocs/downloads.html</link>
+	
+	None of these libraries have been tested so use them at your own peril.
+	
+	All the documentation listed above is generated automatically every time the Saiku server builds and therefore should always be up to date.
+
+      </para>
+    </section>
+ </chapter>
