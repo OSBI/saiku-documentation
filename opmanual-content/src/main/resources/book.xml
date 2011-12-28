@@ -38,6 +38,12 @@
 	<authorinitials>TB</authorinitials>
 	<revremark>Initial layout and padding</revremark>
       </revision>
+      <revision>
+	<revnumber>0.2</revnumber>
+	<date>2011-12-29</date>
+	<authorinitials>TB</authorinitials>
+	<revremark>Add new docs about security, create development doc and update API documentation.</revremark>
+      </revision>
     </revhistory>
   </info>
   <xi:include href="copyright.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

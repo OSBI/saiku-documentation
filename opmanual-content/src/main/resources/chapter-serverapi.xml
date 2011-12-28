@@ -21,21 +21,21 @@
 	  </listitem> 
 	  <listitem>
 	    <para>
-	      Webapp Javadocs: http://ci.analytical-labs.com/job/saiku-webapp/javadoc/ 
+	      UI JSDocs: http://ci.analytical-labs.com/job/saiku-ui/JSDoc/
 	    </para>
 	  </listitem>
 	</itemizedlist>
       </para>
       <para>Our project uses Enunciate for documentation and some maintenance of endpoints. Most of our configuration is just based around on what is supplied out of the box but we may look to extend this in the future.
       
-      In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/index.html">http://demo.analytical-labs.com/saiku/serverdocs/index.html</link>
+      In the mean time you will find much documentation about our REST endpoints here: <link xl:href="http://demo.analytical-labs.com/saiku/serverdocs/">http://demo.analytical-labs.com/saiku/serverdocs/</link>
       
       or if you have your own installation: <link xl:href="http://localhost/saiku/serverdocs/index.html">http://localhost/saiku/serverdocs/index.html</link>
       
       Just hit login on any login screens that may appear. 
       </para>
     </section>
-    <section>
+<!-- Curently enunciate doesn't build them    <section>
       <info>
 	<title>Helper Libraries</title>
       </info>
@@ -49,17 +49,7 @@
 	  </listitem>
 	  <listitem>
 	    <para>
-	      .NET Client
-	    </para>
-	  </listitem>
-	  <listitem>
-	    <para>
-	      Java Client
-	    </para>
-	  </listitem>
-	  <listitem>
-	    <para>
-	      Java JSON Client
+	      Ruby Client
 	    </para>
 	  </listitem>
 	  <listitem>
@@ -77,5 +67,5 @@
 	All the documentation listed above is generated automatically every time the Saiku server builds and therefore should always be up to date.
 
       </para>
-    </section>
+    </section>-->
  </chapter>
