@@ -14,33 +14,34 @@
 	  <title>Why Multidimensional Modeling</title>
 	</info>
 	<para>
-	  Multidimensional analysis is far more than fancy drag and drop GUIs are able to reveal. First we have to answer the questions why we need multidimensional modeling. For a long time SQL (Structured Query Language) was the de-facto standard for data analysis. SQL proved unsuitable or too complex for many business analysis questions, this was when multidimensional analysis was born. Microsoft was one of the first companies to create a dedicated query language called MDX (Multi-Dimensional eXpressions) for this purpose. MDX became soon the new de-facto standard for multi-dimensional analysis and every major player implemented it. MDX is so more powerful than SQL and able to answer complex business questions.
+	  <indexterm><primary>Multidimensional analysis</primary></indexterm> 
+	  Multidimensional analysis is far more than fancy drag and drop GUIs are able to reveal. First we have to answer the questions why we need multidimensional modeling. For a long time <indexterm><primary>SQL</primary><secondary>Structured Query Language</secondary></indexterm> SQL (Structured Query Language) was the de-facto standard for data analysis. SQL proved unsuitable or too complex for many business analysis questions, this was when multidimensional analysis was born. Microsoft was one of the first companies to create a dedicated query language called <indexterm><primary>MDX</primary><secondary>Multi-Dimensional eXpressions</secondary></indexterm> MDX (Multi-Dimensional eXpressions) for this purpose. MDX became soon the new de-facto standard for multi-dimensional analysis and every major player implemented it. MDX is far more powerful than SQL and able to answer complex business questions.
 	</para>
 	<para>
-	  Each OLAP (short for On-Line Analytic Processing) Cube is defined by a OLAP schema and MDX queries reference this definition. The OLAP cube schema acts as an abstraction layer as well, usually with the additional benefit of standardization and access control. Even if for example the column name of one table changes, only the cube definition has to be changed and not any queries. This is a huge additional benefit.
+	  Each <indexterm><primary>OLAP</primary><secondary>On-Line Analytic Processing</secondary></indexterm> OLAP (On-Line Analytic Processing) Cube is defined by an <indexterm><primary>OLAP schema</primary></indexterm> OLAP schema and MDX queries reference this definition. The OLAP cube schema acts as an abstraction layer as well, usually with the additional benefit of standardization and access control. Even if for example the column name of one table changes, only the cube definition has to be changed and not any queries. This is a huge additional benefit.
 	</para>
 	<para>
 	  There are various OLAP servers on the market which can be mainly differentiated by the way they access data:
 	  <itemizedlist>
 	    <listitem>
 	      <para>
-		ROLAP (Relational OLAP): The data is directly queried from a relational database.
+		<indexterm><primary>ROLAP</primary><secondary>Relational OLAP</secondary></indexterm>ROLAP (Relational OLAP): The data is directly queried from a relational database.
 	      </para>
 	    </listitem>
 	    <listitem>
 	      <para>
-		MOLAP (Multidimensional OLAP): The OLAP server stores the data in memory. This kind of restricts how much data can be processed.
+		<indexterm><primary>MOLAP</primary><secondard>Multidimensional OLAP</secondard></indexterm>MOLAP (Multidimensional OLAP): The OLAP server stores the data in memory. This kind of restricts how much data can be processed.
 	      </para>
 	    </listitem>
 	    <listitem>
 	      <para>
-		HOLAP (Hybrid OLAP): This is a compromise of the two above approaches where some data (mostly aggregated one) is stored in memory and the rest on disk.
+		<indexterm><primary>HOLAP</primary><secondary>Hybrid OLAP</secondary></indexterm>HOLAP (Hybrid OLAP): This is a compromise of the two above approaches where some data (mostly aggregated one) is stored in memory and the rest on disk.
 	      </para>
 	    </listitem>
 	  </itemizedlist>
 	</para>
 	<para>
-	  In this article we will be working with Mondrian, an open-source OLAP Server. The recent release of Mondrian has full in-memory support, hence the lines between ROLAP and MOLAP get quite blurred.
+	  In this article we will be working with <indexterm><primary>Mondrian</primary></indexterm>Mondrian, an open-source OLAP Server. The recent release of Mondrian has full in-memory support, hence the lines between ROLAP and MOLAP get quite blurred.
 	</para>
       </section>
       <section>
@@ -48,7 +49,7 @@
 	  <title>Use Cases</title>
 	</info>
 	<para>
-	  Most user will be familiar with Microsoft Excel Pivot Tables. In it’s very own way, this could be thought of as the very first multi-dimensional analysis tool reaching a mass audience. While Excel Pivot tables are a fine solution for working with small amounts of data, proper business intelligence solutions require a dedicated OLAP server and web GUIs which optionally allow to export the data in example to Excel.
+	  Most users will be familiar with <indexterm><primary>Microsoft Excel</primary></indexterm>Microsoft Excel <indexterm><primary>Pivot Tables</primary></indexterm>Pivot Tables. In it’s very own way, this could be thought of as the very first multi-dimensional analysis tool reaching a mass audience. While Excel Pivot tables are a fine solution for working with small amounts of data, proper business intelligence solutions require a dedicated OLAP server and web GUIs which optionally allow to export the data in example to Excel.
 	</para>
 	<para>
 	  Multi-dimensional analysis is not just about fancy drag and drop GUIs, but result sets can be also used in standard reports and dashboards. 
@@ -79,13 +80,13 @@
 	  <title>Data Warehouse</title>
 	</info>
 	<para>
-	  As already mentioned, the data warehouse stores that data in a way that it is easy and fast to access for analytical queries. There are various established methodologies to achieve this:
+	  As already mentioned, the <indexterm><primary>data warehouse</primary></indexterm>data warehouse stores that data in a way that it is easy and fast to access for analytical queries. There are various established methodologies to achieve this:
 	  <section>
 	    <info>
 	      <title>Star and Snowflake Schema</title>
 	    </info>
 	    <para>
-	      Ralph Kimball’s start and snowflake schemata are the classic data warehouse models. It is a structured way of getting your data ready for analytical queries. These models have been around for the last 15 years and were the preferred solution for a long time. In recent years new emerging technologies have challenged this approach to some extend. Let’s have a quick overview of this approach:
+	      <indexterm><primary>Ralph Kimball</primary></indexterm>Ralph Kimball’s star<indexterm><primary>star</primary></indexterm> and snowflake<indexterm><primary>snowflake</primary></indexterm> schemata are the classic data warehouse models. It is a structured way of getting your data ready for analytical queries. These models have been around for the last 15 years and were the preferred solution for a long time. In recent years new emerging technologies have challenged this approach to some extend. Let’s have a quick overview of this approach:
 	      <section>
 		<info>
 		  <title>Star Schema</title>
@@ -134,7 +135,7 @@
 		      <title>Dimension Tables</title>
 		    </info>
 		    <para>
-		      These table hold all the data about your dimensions. A classic example is the date dimension: People want to slice and dice data by various date attributes, like year, quarter, month, day. The date dimension can get quite wide (many columns) as there are so many date attributes. So instead of storing all this data in the fact table, you create a dedicated date dimension for it. The golden rule is: If a dimension has a lot of attributes, create a dedicated table for it.
+		      These table hold all the data about your dimensions. A classic example is the <indexterm><primary>date dimension</primary></indexterm>date dimension: People want to slice and dice data by various date attributes, like year, quarter, month, day. The date dimension can get quite wide (many columns) as there are so many date attributes. So instead of storing all this data in the fact table, you create a dedicated date dimension for it. The golden rule is: If a dimension has a lot of attributes, create a dedicated table for it.
 		    </para>
 		    <para>
 		      Each record in the dimension table gets assigned a unique technical key. This key is used in the fact table to reference the dimensional record.
@@ -142,10 +143,10 @@
 		  </section>
 		<section>
 		  <info>
-		    <title>Degenerated Dimensions</title>
+		    <title>Degenerate Dimensions</title>
 		  </info>
 		  <para>
-		    Remember the golden rule we just mentioned? That’s where degenerated dimensions come in: They are kind of the opposite, meaning, dimensions without any additional attributes. A typical example is gender. These dimensional values can be stored directly in the fact table.
+		    Remember the golden rule we just mentioned? That’s where <indexterm><primary>degenerate dimensions</primary></indexterm>degenerate dimensions come in: They are kind of the opposite, meaning, dimensions without any additional attributes. A typical example is gender. These dimensional values can be stored directly in the fact table.
 		  </para>
 		</section>
 		</para>
@@ -175,7 +176,7 @@
 		  <title>Completely Denormalized</title>
 		</info>
 		<para>
-		  At the other end of the spectrum we have the completely denormalized fact table, which basically means that this table holds all the data. This is popular approach for Agile BI due to its simplicity and ease to adopt change. Normally it takes quite some time to implement the ETL process to populate a star or snowflake schemata. Creating an ETL process to populate a denormalized table is usually less time intensive. 
+		  At the other end of the spectrum we have the completely <indexterm><primary>denormalized</primary></indexterm>denormalized fact table, which basically means that this table holds all the data. This is popular approach for Agile BI due to its simplicity and ease to adopt change. Normally it takes quite some time to implement the ETL process to populate a star or snowflake schemata. Creating an ETL process to populate a denormalized table is usually less time intensive. 
 		</para>
 	      </section>
 	      <section>
@@ -186,7 +187,7 @@
 		  To combine the advantages of both above mentioned approaches it is sometimes a good idea to find a compromise. You might want to store some data in dimensional tables, but keep other in the fact table. The number of dimensional tables will be small. This allows to to be still fairly flexible with your data model.
 		</para>
 		<para>
-		  It is also worth mentioning that it is a good approach to start off a project with a completely denormalized model as it is (1) fairly quick to implement and (2) easy to implement customer feedback. Once the data model has stabilized, a hybrid or start/snowflake schema approach can be implemented next if required.
+		  It is also worth mentioning that it is a good approach to start off a project with a completely denormalized model as it is (1) fairly quick to implement and (2) easy to implement customer feedback. Once the data model has stabilized, a <indexterm><primary>hybrid</primary></indexterm>hybrid or start/snowflake schema approach can be implemented next if required.
 		</para>
 	      </section>
 	    </para>
@@ -248,21 +249,21 @@
 	  <title>Mondrian OLAP Server</title>
 	</info>
 	<para>
-	  Mondrian is an established open-source OLAP Server written in Java. As it is written in Java, it runs basically on any platform that Java is available for. Mondrian also implements a lot of other open standards like:
+	  <indexterm><primary>Mondrian</primary></indexterm>Mondrian is an established open-source OLAP Server written in Java. As it is written in Java, it runs basically on any platform that Java is available for. Mondrian also implements a lot of other open standards like:
 	  <itemizedlist>
 	    <listitem>
 	      <para>
-		MDX (multi-dimensional expressions): standard multi-dimensional query language
+		<indexterm><primary>MDX</primary><secondary>multi-dimensional expressions</secondary></indexterm> MDX (multi-dimensional expressions): standard multi-dimensional query language
 	      </para>
 	    </listitem>
 	    <listitem>
 	      <para>
-		XMLA (XML for Analysis): Industry standard for data access in analytical systems
+		<indexterm><primary>XMLA</primary><secondary>XML for Analysis</secondary></indexterm>XMLA (XML for Analysis): Industry standard for data access in analytical systems
 	      </para>
 	    </listitem>
 	    <listitem>
 	      <para>
-		OLAP4J (on-line analytical processing for Java): open Java API for OLAP which allows you to write an analytical application for one server and easily switch it to another one.
+		<indexterm><primary>OLAP4J</primary></indexterm> OLAP4J (on-line analytical processing for Java): open Java API for OLAP which allows you to write an analytical application for one server and easily switch it to another one.
 	      </para>
 	    </listitem>
 	  </itemizedlist>
@@ -277,7 +278,7 @@
 	  The output of your ETL process has to be stored on a database which is fast enough to answer analytical queries. In recent years columnar databases gained great momentum as the ideal base for a data warehouse. While it might be fine to store small amounts of data on a transactional database, once the amount of data grows, the query performance will decrease considerably.
 	</para>
 	<para>
-	  We conducted an internal benchmark on columnar database and Actian VectorWise was the clear winner.
+	  We conducted an internal benchmark on columnar database and <indexterm><primary>Actian</primary> <secondary>VectorWise</secondary></indexterm> Actian VectorWise was the clear winner.
 	</para>
       </section>
       <section>
@@ -285,10 +286,10 @@
 	  <title>Pentaho Data Integration with Agile BI Plugin</title>
 	</info>
 	<para>
-	  You are looking for a tool which allows to create your ETL process, your OLAP schema and offers a drag and drop OLAP GUI - all under one hood, then you have found your ideal match in Pentaho Data Integration (short PDI, aka Kettle).
+	  You are looking for a tool which allows to create your ETL process, your OLAP schema and offers a drag and drop OLAP GUI - all under one hood, then you have found your ideal match in <indexterm><primary>Pentaho Data Integration</primary><secondary>PDI</secondary><tertiary>Kettle</tertiary></indexterm>Pentaho Data Integration (short PDI, aka Kettle).
 	</para>
 	<para>
-	  PDI is mainly known for its ETL features. In the last 2 years these core feature have been extended by plug-ins. One of these plug-ins is the Agile BI plug-in, which adds additional perspectives to the GUI to create OLAP Schemata and to visualize them. The great thing about this is that it all works together: So you can create your ETL process, let Kettle auto-generate an OLAP Schema based on the ETL process output and then instantly analyze the data using the built-in OLAP Analyzer GUI. This allows you to speed up your development process considerable and spot problems early enough.
+	  PDI is mainly known for its <indexterm><primary>ETL</primary></indexterm>ETL features. In the last 2 years these core feature have been extended by plug-ins. One of these plug-ins is the <indexterm><primary>Agile BI</primary></indexterm>Agile BI plug-in, which adds additional perspectives to the GUI to create OLAP Schemata and to visualize them. The great thing about this is that it all works together: So you can create your ETL process, let Kettle auto-generate an OLAP Schema based on the ETL process output and then instantly analyze the data using the built-in OLAP Analyzer GUI. This allows you to speed up your development process considerable and spot problems early enough.
 	</para>
 	<para>
 	  PDI allows to switch between the stages using the perspective views:
@@ -374,10 +375,10 @@
 	<para>
 	  <section>
 	    <info>
-	      <title>Mondrian Schema Workbench</title>
+	      <title>Pentaho Schema Workbench</title>
 	    </info>
 	    <para>
-	      This is the mother of all Mondrian OLAP schema designers as it allows specifying all available options. While the interface is very simple, it gets the job done:
+	      <indexterm><primary>Pentaho Schema Workbench</primary><secondary>PSW</secondary></indexterm>Pentaho Schema Workbench or PSW as it is known, is the mother of all Mondrian OLAP schema designers as it allows specifying all available options. While the interface is very simple, it gets the job done:
 	      <figure xml:id="ex.psw">
 		<title>Pentaho Schema Workbench</title>
 		<mediaobject>
@@ -397,7 +398,7 @@
 	      <title>SQLPower Architect</title>
 	    </info>
 	    <para>
-	      The Canadian company SQLPower offers a tool called Architect which is primarily targeted at database design, but offers as an additional bonus Mondrian schema design functionality as well. 
+	      The Canadian company <indexterm><primary>SQLPower</primary></indexterm>SQLPower offers a tool called <indexterm><primary>Architect</primary></indexterm>Architect which is primarily targeted at database design, but offers as an additional bonus Mondrian schema design functionality as well. 
 	      <figure xml:id="ex.architect">
 		<title>Architect</title>
 		<mediaobject>
@@ -423,7 +424,7 @@
 	      <title>Text or XML Editor</title>
 	    </info>
 	    <para>
-	      Users familiar with XML can create their OLAP schema using a standard text editor or XML editor. Ideally the XML should be validated before export to avoid nasty surprises.
+	      Users familiar with <indexterm><primary>XML</primary></indexterm>XML can create their OLAP schema using a standard text editor or XML editor. Ideally the XML should be validated before export to avoid nasty surprises.
 	      <figure xml:id="ex.gedit">
 		<title>GEdit</title>
 		<mediaobject>
