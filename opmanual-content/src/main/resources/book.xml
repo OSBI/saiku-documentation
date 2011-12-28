@@ -24,25 +24,19 @@
     </authorgroup>
 
     <address>
-      <email>tom.barber@ecommera.co.uk</email>
+      <email>tom@analytical-labs.com</email>
     </address>
     
-    <!--    <copyright>
-	 <year>2010</year>
-	 
-	 <holder>eCommera Ltd</holder>
-	 </copyright>
-	 
-	 <legalnotice>
+<!--	 <legalnotice>
 	 <para>Don't share this with no-one</para>
 	 </legalnotice>-->
     
     <revhistory>
       <revision>
-	<revnumber>0.0</revnumber>
-	<date>2010-12-22</date>
-	<authorinitials>tb</authorinitials>
-	<revremark>Initial formatting</revremark>
+	<revnumber>0.1</revnumber>
+	<date>2011-12-28</date>
+	<authorinitials>TB</authorinitials>
+	<revremark>Initial layout and padding</revremark>
       </revision>
     </revhistory>
   </info>
