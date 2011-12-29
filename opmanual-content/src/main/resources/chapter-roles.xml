@@ -10,7 +10,44 @@
         <title>Mondrian Roles</title>
       </info>
       <para>
-	The users are stored in WEB-INF/users.properties in the following format (one user per line) username=password,role. You can edit this file to remove the default users and to create new users with the ROLE_USER role.
+	<indexterm><primary>Mondrian</primary></indexterm>
+	<indexterm><primary>Roles</primary><secondary>mapping</secondary><secondary>one2one</secondary><secondary>passthrough</secondary></indexterm>Mondrian Roles allow you to prohibit certain users from seeing certain data. For example, if your uses were sales managers for different regions, you could lock down those managers to see only the regions they worked in, whilst allowing senior management to see all the regions, without there being any difference to queries or appearance. 
+      </para>
+      <para>
+	<indexterm><primary>Pentaho Schema Workbench></primary></indexterm>To configure roles, firstly you must add some roles to your schema, to do so I would recommend the use of Pentaho Schema Workbench. Full documentation regarding how roles work can be found <ulink xl:href="http://mondrian.pentaho.com/documentation/schema.php#Access_control">here</ulink>.
+      </para>
+      <para>
+	Next you need to edit you Saiku data source, within this file you need firstly to enable role based security.
+      </para>
+      <para>
+	<screen>security.enabled=true</screen>
+      </para>
+      <para>
+	The two main types of role mapping are, one2one and mapping. One2one offers the ability for Saiku to try and map the role of the logged in user, to the role defined in the schema. So for example if the user has a security role called CTO, Saiku will try and map this to a role called CTO it finds in the Mondrian schema. To enable one2one add the following to your data source file:
+      </para>
+      <para>
+	<screen>security.type=one2one</screen>
+      </para>
+      <para>
+	The mapping setting allows you to manually define mapping setups within the data source file. To do this add the following to your data source file:
+      </para>
+      <para>
+	<screen>security.type=mapping</screen>
+      </para>
+      <para>
+	You can then map Spring roles to Mondrian roles by adding:
+      </para>
+      <para>
+	<screen>security.mapping=springRole=mondrianRole1;theBoss=CEO</screen>
+      </para>
+      <para>
+	As you can see the above would try and map 2 spring roles called springRole and theBoss to two Mondrian roles called mondrianRole1 and CEO.
+      </para>
+      <para>
+	Finally we have another security type called passthrough. This passes the username and password of the logged in user to the connection, which is useful for remote XML/A connections. To enable passthrough add this to your datasource file:
+      </para>
+      <para>
+	<screen>security.type=passthrough</screen>
       </para>
     </section>
  </chapter>

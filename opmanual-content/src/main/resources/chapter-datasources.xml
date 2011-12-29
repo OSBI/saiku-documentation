@@ -41,4 +41,82 @@ password=password
 	<indexterm><primary>JDBC</primary><secondary>Drivers</secondary></indexterm>Obviously not everyone uses Hypersonic or MySQL to connect to their data warehouses. To use your specific database, please add the JDBC connector jar file to saiku-server/tomcat/webapps/saiku/WEB-INF/lib/ and then make the appropriate changes to the jdbc portion of the location string in the connection file.
       </para>
       </section>
+      <section>
+	<info>
+	  <title>Sample Data Sources</title>
+	</info>
+	<section>
+	  <info>
+	    <title>Mondrian on MySQL</title>
+	  </info>
+	  <para>
+	    <screen>type=OLAP
+name=steelwheels
+driver=mondrian.olap4j.MondrianOlap4jDriver
+location=jdbc:mondrian:Jdbc=jdbc:mysql://localhost/sampledata; \
+> Catalog=../webapps/saiku/steelwheels/steelwheels.mondrian.xml;JdbcDrivers=com.mysql.jdbc.Driver;
+username=dbuser
+password=password</screen>
+	  </para>
+	</section>
+	<section>
+	  <info>
+	    <title>XML/A (Pentaho BI Server)</title>
+	  </info>
+	  <para>
+	    <screen>type=OLAP
+name=xmla
+driver=org.olap4j.driver.xmla.XmlaOlap4jDriver
+location=jdbc:xmla:Server=http://localhost:8080/pentaho/Xmla?userid=joe&amp;password=password;
+username=joe
+password=password</screen>
+	  </para>
+	</section>
+	<section>
+	  <info>
+	    <title>XML/A (PALO)</title>
+	  </info>
+	  <para>
+	    <screen>type=OLAP
+name=xmla
+driver=org.olap4j.driver.xmla.XmlaOlap4jDriver
+location=jdbc:xmla:Server=http://localhost:4242/
+username=joe
+password=password</screen>
+	  </para>
+	</section>
+	<section>
+	  <info>
+	    <title>Mondrian on PostgreSQL</title>
+	  </info>
+	  <para>
+	    <screen>type=OLAP
+name=db_name
+driver=mondrian.olap4j.MondrianOlap4jDriver
+location=jdbc:mondrian:Jdbc=jdbc:postgresql://database_host:port/db_name; \
+> Catalog=res:data_directory/schema_file.mondrian.xml;JdbcDrivers=org.postgresql.Driver;
+username=db_user_name
+password=db_password</screen>
+	  </para>
+	</section>
+	<section>
+	  <info>
+	    <title>XML/A (Microsoft SSAS)</title>
+	  </info>
+	  <para>
+	    <note>
+	    you need to install the msmdpump.dll : http://technet.microsoft.com/en-us/library/cc917711.aspx
+	    </note>
+	  </para>
+	  <para>
+	    <screen>type=OLAP
+name=xmla
+driver=org.olap4j.driver.xmla.XmlaOlap4jDriver
+location=jdbc:xmla:Server=http://192.168.0.1/olap/msmdpump.dll
+username=joe
+password=password
+</screen>
+	  </para>
+	</section>
+      </section>
  </chapter>
