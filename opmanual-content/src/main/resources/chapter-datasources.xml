@@ -118,5 +118,20 @@ password=password
 </screen>
 	  </para>
 	</section>
+	<secion>
+		<info>
+			<title>DB2</title>
+		<info>
+		<para>
+			<screen>
+			type=OLAP
+			name=datasource_name
+			driver=mondrian.olap4j.MondrianOlap4jDriver
+			location=jdbc:mondrian:Jdbc=jdbc:db2://servername:port/SAMPLE;Catalog=../webapps/saiku/sample/Schema1.xml;JdbcDrivers=com.ibm.db2.jcc.DB2Driver;
+			username=username
+			password=password
+			</screen>
+		</para>
+	</section>
       </section>
  </chapter>
