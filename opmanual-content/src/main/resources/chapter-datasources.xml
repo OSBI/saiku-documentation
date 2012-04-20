@@ -123,6 +123,12 @@ password=password
 			<title>DB2</title>
 		<info>
 		<para>
+			<note>
+				 With DB2, schema files must define tables, views and columns in UPPER CASE. DB2 is case sensitive. If you specify a table or column name without double-quotes, it is converted to upper case. This happens in both a CREATE TABLE statement and in SELECT statements.
+The solution is either to use double-quotes when creating your schema (so your table will be called czas) or to specify the table and column names in upper-case in your mondrian schema file.
+			</note>
+		</para>
+		<para>
 			<screen>
 			type=OLAP
 			name=datasource_name
