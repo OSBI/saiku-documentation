@@ -129,14 +129,13 @@ The solution is either to use double-quotes when creating your schema (so your t
 			</note>
 		</para>
 		<para>
-			<screen>
-			type=OLAP
-			name=datasource_name
-			driver=mondrian.olap4j.MondrianOlap4jDriver
-			location=jdbc:mondrian:Jdbc=jdbc:db2://servername:port/SAMPLE;Catalog=../webapps/saiku/sample/Schema1.xml;JdbcDrivers=com.ibm.db2.jcc.DB2Driver;
-			username=username
-			password=password
-			</screen>
+<screen>type=OLAP
+name=datasource_name
+driver=mondrian.olap4j.MondrianOlap4jDriver
+location=jdbc:mondrian:Jdbc=jdbc:db2://servername:port/SAMPLE;Catalog=../webapps/saiku/sample/Schema1.xml;JdbcDrivers=com.ibm.db2.jcc.DB2Driver;
+username=username
+password=password
+</screen>
 		</para>
 	</section>
       </section>
