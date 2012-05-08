@@ -24,7 +24,7 @@
 $ <command>sh start-saiku.sh</command></screen></para>
 	</para>
 	<para>
-	  This will start the supplied Tomcat server and all the required components to make the Saiku server operational. After a few seconds if you navigate to <link xl:href="http://localhost:8080">http://localhost:8080</link> you will be greated with the Saiku user interface.
+	  This will start the supplied Tomcat server and all the required components to make the Saiku server operational. After a few seconds if you navigate to <link xl:href="http://localhost:8080">http://localhost:8080</link> you will be greated with the Saiku user interface. To login enter the username: admin and the password: admin.
 	</para>
 	<para>
 	  To create a new query click on the drop down box on the left hand side of the user interface and select a cube from the list. You will then be presented with a list of dimensions and measures which you can then drag from the browser area on the left to the Columns, Rows and Filters box on the main query window.
