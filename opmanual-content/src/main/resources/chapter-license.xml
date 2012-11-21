@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <chapter xml:id="Licensing" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+    <info>
+      <title>Licensing</title>
+    </info>
+    
+    <section>
+      <info>
+        <title>Saiku Licensing</title>
+      </info>
+      <para>
+	<indexterm><primary>License</primary></indexterm>Prior to version 2.4 the Saiku server component was licensed under the GPL v2 license and the UI under the LGPL license. From version 2.4 onwards we have switched the entire stack to the Apache license V2. We believe that using a more permissive license will help Saiku grow as a product as it allows people to use the software more freely.
+      </para>
+    </section>
+ </chapter>

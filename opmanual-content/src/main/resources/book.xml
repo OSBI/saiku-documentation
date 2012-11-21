@@ -63,6 +63,7 @@
   <xi:include href="chapter-development.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="chapter-serverapi.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="chapter-support.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <xi:include href="chapter-license.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <xi:include href="appendix-cubedesign.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
   <index></index>
 </book>
